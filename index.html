@@ -307,6 +307,7 @@
     #story-lab     { --accent: var(--gold); }
     #reflect       { --accent: var(--lavender); }
     #book          { --accent: var(--bronze); }
+    #my-story      { --accent: var(--gold); }
     #start         { --accent: var(--gold); }
 
     /* Writing workspace */
@@ -380,6 +381,22 @@
       border-bottom: 1px dashed var(--gold-light);
     }
 
+    .quote {
+      margin: 0.9rem 0;
+      padding: 14px 18px;
+      background: #faf3e2;
+      border-inline-start: 4px solid var(--gold);
+      border-radius: 8px;
+      font-family: var(--serif);
+      font-style: italic;
+    }
+    .quote footer {
+      margin-top: 6px;
+      font-style: normal;
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+
     /* Author */
     .author {
       position: relative;
@@ -448,6 +465,7 @@
       <a href="#poetry-prose">Poetry &amp; Prose</a>
       <a href="#story-lab">Story Lab</a>
       <a href="#reflect">Reflect</a>
+      <a href="#my-story">My Story</a>
       <a href="#book">Book</a>
     </div>
   </nav>
@@ -729,6 +747,63 @@
       <label class="done"><input type="checkbox" data-done="reflect"> I finished this lesson</label>
     </section>
 
+    <!-- MY STORY -->
+    <section class="page" id="my-story">
+      <div class="page-head">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fffdf6" stroke-width="1.8"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg>
+        </div>
+        <h2>My Story</h2>
+      </div>
+
+      <p>
+        My story with English began in high school. It was there that I first
+        fell in love with words, with rhythm, and with the way a line of poetry
+        can carry a feeling further than an ordinary sentence.
+      </p>
+
+      <p>
+        My love of writing began much earlier. At the age of nine I started
+        typing on a typesetter machine, inspired by my late relative,
+        Bouzaher Toufik. That first experience with the keys and with the printed
+        page taught me that words deserve care.
+      </p>
+
+      <h3>Words from my teachers</h3>
+
+      <blockquote class="quote">
+        <p>
+          "It is my great pleasure to write these few words about my dear pupil
+          Bouzaher Noureddine… he was not only brilliant but also very respectful
+          and well-disciplined. I am so proud of him."
+        </p>
+        <footer>Mrs. Boudjellal Warda, High School, Khenchela, 2005</footer>
+      </blockquote>
+
+      <blockquote class="quote">
+        <p>
+          "…I could have a quick look at your poems, and all I can say; they are
+          simply terrific and you are simply a very talented student. I ask you to
+          keep on writing."
+        </p>
+        <footer>Professor Fatima Hamadouche, University Constantine 1, 2009</footer>
+      </blockquote>
+
+      <blockquote class="quote">
+        <p>
+          "Never give up and most importantly, never lose hope. Nothing is
+          impossible and there are always opportunities. Looking forward to
+          reading your future works."
+        </p>
+        <footer>Dr. Ahlem Chalghoum, University Constantine 1, 2020</footer>
+      </blockquote>
+
+      <p class="ltr" lang="en">
+        This project is a work of charity. I created it for free, so that learners
+        who cannot afford classes can still learn English through poetry and writing.
+      </p>
+    </section>
+
     <!-- BOOK -->
     <section class="page" id="book">
       <div class="page-head">
@@ -755,7 +830,8 @@
 
       <ul class="book-facts ltr" lang="en">
         <li>Author: Noureddine Bouzaher</li>
-        <li>First published: 2025</li>
+        <li>First published: 2020</li>
+        <li>Dedication: to my late father, who passed away on 26 November 2019</li>
         <li>ISBN: 978-9931-788-102</li>
       </ul>
     </section>
