@@ -1,46 +1,88 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تعليم الإنجليزية بأسلوب شعري</title>
+
+  <title>The Poetic Style Writing Project</title>
+
   <style>
     body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, Arial, sans-serif;
-      background-color: #fdf8f0;
-      color: #3a2e25;
+      background: #f5ecd9;
+      color: #3b2716;
       line-height: 1.9;
     }
+
+    /* Navigation */
+
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      padding: 1rem;
+      background: #3b2716;
+    }
+
+    .site-nav a {
+      color: #f5ecd9;
+      text-decoration: none;
+      padding: 6px 10px;
+    }
+
+    .site-nav a:hover {
+      background: #c9a27e;
+      color: #3b2716;
+      border-radius: 5px;
+    }
+
+    /* Header */
+
     header {
       text-align: center;
       padding: 60px 20px 30px;
     }
+
     h1 {
       font-size: 2rem;
       color: #7a3e1d;
-      margin-bottom: 0.3em;
     }
+
     .subtitle {
       font-size: 1.1rem;
       color: #6b5a4d;
     }
+
+    /* Main Content */
+
     main {
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto;
       padding: 20px;
     }
-    .card {
-      background: #ffffff;
+
+    .card,
+    .lesson-card {
+      background: #fbf5e8;
+      border: 1px solid #d4b995;
       border-radius: 12px;
       padding: 24px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
-    .card h2 {
-      margin-top: 0;
+
+    h2 {
       color: #7a3e1d;
     }
+
+    .ltr {
+      direction: ltr;
+      text-align: left;
+    }
+
     .poem {
       font-family: Georgia, "Times New Roman", serif;
       direction: ltr;
@@ -48,49 +90,290 @@
       font-style: italic;
       background: #faf3e6;
       padding: 16px;
-      border-right: 4px solid #c9a27e;
+      border-left: 4px solid #c9a27e;
       border-radius: 6px;
     }
+
+    /* Author */
+
+    .author {
+      text-align: center;
+      max-width: 420px;
+      margin: 40px auto;
+      padding: 20px;
+      color: #3b2716;
+      background: #ffffff;
+      border-radius: 12px;
+    }
+
+    .author-photo {
+      width: 180px;
+      height: 180px;
+      border: 6px solid #3b2716;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    /* Writing Workspace */
+
+    textarea {
+      width: 100%;
+      min-height: 150px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #ffffff;
+      border: 1px solid #3b2716;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    /* Footer */
+
     footer {
       text-align: center;
       padding: 30px;
       color: #8a7a6d;
       font-size: 0.9rem;
     }
+
+    section {
+      scroll-margin-top: 20px;
+    }
   </style>
 </head>
+
 <body>
 
-  <header>
+  <!-- NAVIGATION MENU -->
+
+  <nav class="site-nav">
+    <a href="#home">Home</a>
+    <a href="#author">Author</a>
+    <a href="#start">Start</a>
+    <a href="#sentence-play">Sentence Play</a>
+    <a href="#poetry">Poetry</a>
+    <a href="#reader-response">Reader Response</a>
+    <a href="#poetry-prose">Poetry &amp; Prose</a>
+    <a href="#story-lab">Story Lab</a>
+    <a href="#reflect">Reflect</a>
+    <a href="#book">Book</a>
+  </nav>
+
+  <!-- HOME -->
+
+  <header id="home">
     <h1>تعليم الإنجليزية بأسلوب شعري</h1>
-    <p class="subtitle">English teaching through poetry</p>
+    <p class="subtitle">English Teaching Through Poetry</p>
+    <p>The Poetic Style Writing Project</p>
   </header>
 
   <main>
-    <section class="card">
+
+    <section class="card" id="start">
       <h2>مرحباً بك</h2>
+
       <p>
-        في هذا الموقع نتعلم اللغة الإنجليزية من خلال الشعر، فالقصيدة تجمع بين
-        المفردات والإيقاع والمعنى، وتجعل الحفظ أسهل والفهم أعمق.
+        في هذا الموقع نتعلم اللغة الإنجليزية من خلال الشعر،
+        فالقصيدة تجمع بين المفردات والإيقاع والمعنى،
+        وتجعل الحفظ أسهل والفهم أعمق.
+      </p>
+
+      <p>
+        Welcome to a creative journey through English,
+        poetry, sentences, and storytelling.
       </p>
     </section>
 
-    <section class="card">
-      <h2>نموذج من الدرس</h2>
+    <!-- SENTENCE PLAY -->
+
+    <section class="lesson-card" id="sentence-play">
+      <h2>Sentence Play</h2>
+
+      <h3>Goal</h3>
+
+      <p class="ltr">
+        Use rhyming words to make a line easy to remember.
+      </p>
+
+      <p class="ltr">Estimated time: 10 minutes</p>
+
+      <div class="ltr">
+        <h3>Model</h3>
+
+        <p>
+          "I packed a small blue kite / and watched it lift in light."
+        </p>
+
+        <h3>Activity</h3>
+
+        <p>
+          Choose day/way, rain/train, light/flight, or book/look.
+          Write two connected lines using both words.
+        </p>
+
+        <p>
+          Support: "I ___ today / because ___ came my way."
+        </p>
+
+        <p>
+          Challenge: Write four AABB lines, then rewrite them
+          without rhyme and compare.
+        </p>
+      </div>
+
+      <h3>Your Workspace</h3>
+
+      <textarea id="workspace"
+        placeholder="Write your sentences here..."></textarea>
+    </section>
+
+    <!-- POETRY -->
+
+    <section class="lesson-card" id="poetry">
+      <h2>Poetry</h2>
+
       <p class="poem">
         Twinkle, twinkle, little star,<br>
         How I wonder what you are.
       </p>
-      <p>
-        اقرأ الأبيات بصوت مرتفع، ثم حاول تحديد الكلمات التي تعرفها، ثم ابحث عن
-        معنى الكلمات الجديدة.
+
+      <p class="ltr">
+        Read the poem aloud. Identify familiar words
+        and discover the meaning of new words.
       </p>
     </section>
+
+    <!-- READER RESPONSE -->
+
+    <section class="lesson-card" id="reader-response">
+      <h2>Reader Response</h2>
+
+      <p class="ltr">
+        Read a poem and express your thoughts.
+      </p>
+
+      <p class="ltr">
+        What is the main idea? Which words do you like?
+        How does the poem make you feel?
+      </p>
+
+      <textarea id="reader-workspace"
+        placeholder="Write your response here..."></textarea>
+    </section>
+
+    <!-- POETRY AND PROSE -->
+
+    <section class="lesson-card" id="poetry-prose">
+      <h2>Poetry &amp; Prose</h2>
+
+      <p class="ltr">
+        Poetry uses rhythm, imagery, and carefully chosen words.
+        Prose uses ordinary sentences to communicate ideas and stories.
+      </p>
+
+      <p class="ltr">
+        Activity: Write one idea first as a short poem,
+        then rewrite it as a paragraph.
+      </p>
+
+      <textarea id="prose-workspace"
+        placeholder="Write your poem and prose here..."></textarea>
+    </section>
+
+    <!-- STORY LAB -->
+
+    <section class="lesson-card" id="story-lab">
+      <h2>Story Lab</h2>
+
+      <p class="ltr">
+        Create a short story using imagination and descriptive language.
+      </p>
+
+      <p class="ltr">
+        Start with: "One morning, I discovered a mysterious letter..."
+      </p>
+
+      <textarea id="story-workspace"
+        placeholder="Write your story here..."></textarea>
+    </section>
+
+    <!-- REFLECT -->
+
+    <section class="lesson-card" id="reflect">
+      <h2>Reflect</h2>
+
+      <p class="ltr">
+        Think about what you have learned.
+      </p>
+
+      <p class="ltr">
+        What did you enjoy? What was difficult?
+        What would you like to improve?
+      </p>
+
+      <textarea id="reflect-workspace"
+        placeholder="Write your reflection here..."></textarea>
+    </section>
+
+    <!-- BOOK -->
+
+    <section class="lesson-card" id="book">
+      <h2>Book</h2>
+
+      <p class="ltr">
+        The Poetic Style Writing Project
+      </p>
+
+      <p class="ltr">
+        A creative project exploring sentence play,
+        poetry, prose, and story writing for English learners.
+      </p>
+    </section>
+
   </main>
 
+  <!-- AUTHOR -->
+
+  <section class="author" id="author">
+
+    <img
+      src="author.jpg"
+      alt="Noureddine Bouzaher, author of The Poetic Style Writing Project"
+      class="author-photo"
+    >
+
+    <h2>Noureddine Bouzaher</h2>
+
+    <p>
+      Author of The Poetic Style Writing Project.
+      Sentence play, poetry, and story writing for English learners.
+    </p>
+
+  </section>
+
+  <!-- FOOTER -->
+
   <footer>
-    © 2026 تعليم الإنجليزية بأسلوب شعري
+    © 2026 The Poetic Style Writing Project
+    <br>
+    جميع الحقوق محفوظة
   </footer>
+
+  <!-- AUTOMATIC SAVING -->
+
+  <script>
+    const workspaces = document.querySelectorAll("textarea");
+
+    workspaces.forEach((box) => {
+      const key = "poetic-project-" + box.id;
+
+      box.value = localStorage.getItem(key) || "";
+
+      box.addEventListener("input", () => {
+        localStorage.setItem(key, box.value);
+      });
+    });
+  </script>
 
 </body>
 </html>
