@@ -1,42 +1,80 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="description" content="English teaching through poetry: sentence play, poems, prose, and short stories for English learners, by Noureddine Bouzaher. تعليم الإنجليزية بأسلوب شعري.">
+  <meta property="og:title" content="The Poetic Style Writing Project">
+  <meta property="og:description" content="Learn English through rhyme, poetry, prose, and storytelling.">
+  <meta property="og:type" content="website">
   <title>The Poetic Style Writing Project</title>
 
   <style>
+    :root {
+      --ink: #3b2716;
+      --brown: #7a3e1d;
+      --muted: #5f4f42;
+      --paper: #f5ecd9;
+      --card: #fbf5e8;
+      --line: #d4b995;
+      --accent: #c9a27e;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, Arial, sans-serif;
-      background: #f5ecd9;
-      color: #3b2716;
+      background: var(--paper);
+      color: var(--ink);
       line-height: 1.9;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid var(--brown);
+      outline-offset: 2px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      background: #ffffff;
+      color: var(--ink);
+      padding: 8px 12px;
+      z-index: 10;
     }
 
     /* Navigation */
 
     .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 5;
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 0.5rem 1rem;
       justify-content: center;
       padding: 1rem;
-      background: #3b2716;
+      background: var(--ink);
     }
 
     .site-nav a {
-      color: #f5ecd9;
+      color: var(--paper);
       text-decoration: none;
       padding: 6px 10px;
+      border-radius: 5px;
     }
 
     .site-nav a:hover {
-      background: #c9a27e;
-      color: #3b2716;
-      border-radius: 5px;
+      background: var(--accent);
+      color: var(--ink);
     }
 
     /* Header */
@@ -48,15 +86,17 @@
 
     h1 {
       font-size: 2rem;
-      color: #7a3e1d;
+      color: var(--brown);
+      margin-bottom: 0.25rem;
     }
 
     .subtitle {
       font-size: 1.1rem;
-      color: #6b5a4d;
+      color: var(--muted);
+      margin: 0;
     }
 
-    /* Main Content */
+    /* Main content */
 
     main {
       max-width: 760px;
@@ -66,16 +106,21 @@
 
     .card,
     .lesson-card {
-      background: #fbf5e8;
-      border: 1px solid #d4b995;
+      background: var(--card);
+      border: 1px solid var(--line);
       border-radius: 12px;
       padding: 24px;
       margin-bottom: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     h2 {
-      color: #7a3e1d;
+      color: var(--brown);
+    }
+
+    h3 {
+      color: var(--brown);
+      margin-bottom: 0.3rem;
     }
 
     .ltr {
@@ -90,8 +135,25 @@
       font-style: italic;
       background: #faf3e6;
       padding: 16px;
-      border-left: 4px solid #c9a27e;
+      border-left: 4px solid var(--accent);
       border-radius: 6px;
+    }
+
+    .example {
+      background: #faf3e6;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0 10px;
+      margin-inline-end: 6px;
     }
 
     /* Author */
@@ -101,7 +163,7 @@
       max-width: 420px;
       margin: 40px auto;
       padding: 20px;
-      color: #3b2716;
+      color: var(--ink);
       background: #ffffff;
       border-radius: 12px;
     }
@@ -109,12 +171,14 @@
     .author-photo {
       width: 180px;
       height: 180px;
-      border: 6px solid #3b2716;
+      border: 6px solid var(--ink);
       border-radius: 50%;
       object-fit: cover;
+      display: block;
+      margin: 0 auto 1rem;
     }
 
-    /* Writing Workspace */
+    /* Writing workspace */
 
     textarea {
       width: 100%;
@@ -122,9 +186,50 @@
       font-size: 1rem;
       font-family: inherit;
       background: #ffffff;
-      border: 1px solid #3b2716;
+      border: 1px solid var(--ink);
+      border-radius: 6px;
       padding: 10px;
       box-sizing: border-box;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .workspace-tools {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .workspace-tools button {
+      font: inherit;
+      background: transparent;
+      color: var(--brown);
+      border: 1px solid var(--brown);
+      border-radius: 6px;
+      padding: 4px 12px;
+      cursor: pointer;
+    }
+
+    .workspace-tools button:hover {
+      background: var(--brown);
+      color: #ffffff;
+    }
+
+    /* Book */
+
+    .book-facts {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0;
+    }
+
+    .book-facts li {
+      padding: 4px 0;
+      border-bottom: 1px dashed var(--line);
     }
 
     /* Footer */
@@ -132,21 +237,36 @@
     footer {
       text-align: center;
       padding: 30px;
-      color: #8a7a6d;
+      color: var(--muted);
       font-size: 0.9rem;
     }
 
     section {
-      scroll-margin-top: 20px;
+      scroll-margin-top: 80px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
     }
   </style>
 </head>
 
 <body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <!-- NAVIGATION MENU -->
 
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Main">
     <a href="#home">Home</a>
     <a href="#author">Author</a>
     <a href="#start">Start</a>
@@ -167,7 +287,7 @@
     <p>The Poetic Style Writing Project</p>
   </header>
 
-  <main>
+  <main id="main">
 
     <section class="card" id="start">
       <h2>مرحباً بك</h2>
@@ -178,9 +298,10 @@
         وتجعل الحفظ أسهل والفهم أعمق.
       </p>
 
-      <p>
+      <p lang="en" class="ltr">
         Welcome to a creative journey through English,
-        poetry, sentences, and storytelling.
+        poetry, sentences, and storytelling. Work through the
+        sections in order, or jump to whichever one you need.
       </p>
     </section>
 
@@ -189,18 +310,17 @@
     <section class="lesson-card" id="sentence-play">
       <h2>Sentence Play</h2>
 
-      <h3>Goal</h3>
-
-      <p class="ltr">
+      <p class="tag">Goal</p>
+      <p class="ltr" lang="en">
         Use rhyming words to make a line easy to remember.
       </p>
 
-      <p class="ltr">Estimated time: 10 minutes</p>
+      <p class="tag">Estimated time: 10 minutes</p>
 
-      <div class="ltr">
+      <div class="ltr" lang="en">
         <h3>Model</h3>
 
-        <p>
+        <p class="example">
           "I packed a small blue kite / and watched it lift in light."
         </p>
 
@@ -219,10 +339,25 @@
           Challenge: Write four AABB lines, then rewrite them
           without rhyme and compare.
         </p>
+
+        <h3>Word pairs to try</h3>
+
+        <p class="example">
+          habit – street &nbsp;·&nbsp; museum – stadium &nbsp;·&nbsp;
+          game – name &nbsp;·&nbsp; cars – stars
+        </p>
+
+        <h3>Example</h3>
+
+        <p class="example">
+          I like to ride in cars,<br>
+          And look up at the stars.
+        </p>
       </div>
 
       <h3>Your Workspace</h3>
 
+      <label for="workspace" class="sr-only">Your sentences</label>
       <textarea id="workspace"
         placeholder="Write your sentences here..."></textarea>
     </section>
@@ -237,9 +372,23 @@
         How I wonder what you are.
       </p>
 
-      <p class="ltr">
+      <p class="ltr" lang="en">
         Read the poem aloud. Identify familiar words
         and discover the meaning of new words.
+      </p>
+
+      <h3>Rhyme family: "-ake"</h3>
+
+      <p class="poem">
+        Peace and love, don't make a mistake,<br>
+        Take a deep breath, press the brake.<br>
+        Come inside and share some cake,<br>
+        We're here for joy, not hearts to break.
+      </p>
+
+      <p class="ltr" lang="en">
+        Find the rhyming pairs. Which words sound the same at the end?
+        Can you write a fifth line that keeps the rhyme?
       </p>
     </section>
 
@@ -248,15 +397,22 @@
     <section class="lesson-card" id="reader-response">
       <h2>Reader Response</h2>
 
-      <p class="ltr">
-        Read a poem and express your thoughts.
+      <p class="ltr" lang="en">
+        Read a poem and express your thoughts. There is no wrong
+        answer, as long as you explain your reason clearly.
       </p>
 
-      <p class="ltr">
+      <p class="ltr" lang="en">
         What is the main idea? Which words do you like?
         How does the poem make you feel?
       </p>
 
+      <p class="ltr" lang="en">
+        Try these sentence starters: "I think this poem is about…",
+        "I like the line… because…", "This reminds me of…"
+      </p>
+
+      <label for="reader-workspace" class="sr-only">Your response to the poem</label>
       <textarea id="reader-workspace"
         placeholder="Write your response here..."></textarea>
     </section>
@@ -266,16 +422,22 @@
     <section class="lesson-card" id="poetry-prose">
       <h2>Poetry &amp; Prose</h2>
 
-      <p class="ltr">
+      <p class="ltr" lang="en">
         Poetry uses rhythm, imagery, and carefully chosen words.
         Prose uses ordinary sentences to communicate ideas and stories.
       </p>
 
-      <p class="ltr">
+      <p class="ltr" lang="en">
         Activity: Write one idea first as a short poem,
         then rewrite it as a paragraph.
       </p>
 
+      <p class="ltr" lang="en">
+        Vocabulary to practice: distraction, instruction, introduction,
+        production, reconstruction.
+      </p>
+
+      <label for="prose-workspace" class="sr-only">Your poem and prose</label>
       <textarea id="prose-workspace"
         placeholder="Write your poem and prose here..."></textarea>
     </section>
@@ -285,14 +447,17 @@
     <section class="lesson-card" id="story-lab">
       <h2>Story Lab</h2>
 
-      <p class="ltr">
+      <p class="ltr" lang="en">
         Create a short story using imagination and descriptive language.
+        A strong short story has five parts: characters, setting, plot,
+        conflict, and theme.
       </p>
 
-      <p class="ltr">
-        Start with: "One morning, I discovered a mysterious letter..."
+      <p class="ltr" lang="en">
+        Start with: "One morning, I discovered a mysterious letter…"
       </p>
 
+      <label for="story-workspace" class="sr-only">Your short story</label>
       <textarea id="story-workspace"
         placeholder="Write your story here..."></textarea>
     </section>
@@ -302,15 +467,16 @@
     <section class="lesson-card" id="reflect">
       <h2>Reflect</h2>
 
-      <p class="ltr">
+      <p class="ltr" lang="en">
         Think about what you have learned.
       </p>
 
-      <p class="ltr">
+      <p class="ltr" lang="en">
         What did you enjoy? What was difficult?
         What would you like to improve?
       </p>
 
+      <label for="reflect-workspace" class="sr-only">Your reflection</label>
       <textarea id="reflect-workspace"
         placeholder="Write your reflection here..."></textarea>
     </section>
@@ -320,14 +486,23 @@
     <section class="lesson-card" id="book">
       <h2>Book</h2>
 
-      <p class="ltr">
-        The Poetic Style Writing Project
+      <p class="ltr" lang="en">
+        <strong>The Poetic Style Writing Project</strong><br>
+        A Path to Creative Expression in English
       </p>
 
-      <p class="ltr">
-        A creative project exploring sentence play,
-        poetry, prose, and story writing for English learners.
+      <p class="ltr" lang="en">
+        A creative and practical guide for learners who want to write
+        English with confidence. It covers crafting rhyming sentences,
+        composing poetry, expressing opinions, bridging poetry and prose,
+        and building a complete short story.
       </p>
+
+      <ul class="book-facts ltr" lang="en">
+        <li>Author: Noureddine Bouzaher</li>
+        <li>First published: 2025</li>
+        <li>ISBN: 978-9931-788-102</li>
+      </ul>
     </section>
 
   </main>
@@ -337,16 +512,18 @@
   <section class="author" id="author">
 
     <img
-      src="author.jpg"
+      src="author.jpg.jpg"
       alt="Noureddine Bouzaher, author of The Poetic Style Writing Project"
       class="author-photo"
+      width="180"
+      height="180"
     >
 
     <h2>Noureddine Bouzaher</h2>
 
     <p>
-      Author of The Poetic Style Writing Project.
-      Sentence play, poetry, and story writing for English learners.
+      Poetic writer from Khenchela, Algeria. Author of
+      The Poetic Style Writing Project.
     </p>
 
   </section>
@@ -367,10 +544,18 @@
     workspaces.forEach((box) => {
       const key = "poetic-project-" + box.id;
 
-      box.value = localStorage.getItem(key) || "";
+      try {
+        box.value = localStorage.getItem(key) || "";
+      } catch (e) {
+        // Storage can be blocked (for example, in private browsing).
+      }
 
       box.addEventListener("input", () => {
-        localStorage.setItem(key, box.value);
+        try {
+          localStorage.setItem(key, box.value);
+        } catch (e) {
+          // Ignore: the text stays on the page for this visit.
+        }
       });
     });
   </script>
